@@ -17,17 +17,17 @@ ctStrg="local-lvm"
 #Path of Proxmox CT conf
 ct_conf_path="/etc/pve/lxc"
 #rootfs size for the new CT instance in GB
-rf_size="0.2"
+rf_size="1"
 #memory size for the new CT instance in MB
-declare -i memory="128"
+declare -i memory="512"
 #arch of the new CT instance
 arch="amd64"
 #num of cpu cores assigned to the new CT instance
-declare -i cores="1"
+declare -i cores="2"
 #swap size in MB
 declare -i swap="0"
 #unprivileged or not
-declare -i unprivileged="1"
+declare -i unprivileged="0"
 #OpenWRT config backup filename. DO NOT EDIT. Using non-default value will BREAK OpenWRT built-in config restoration after upgrade.
 declare -r backup_filename="sysupgrade.tgz"
 
