@@ -125,12 +125,12 @@ if ($phase eq 'pre-start') {
 	#Caution: making ctshare rw by everyone has security implications. Only uncomment the line below if it fits your case. 
 	#system("chmod 777 /run/ctshare");
 } elsif ($phase eq 'post-start') {
-	system("lxc-device add -n $vmid /dev/ppp");
-	system("lxc-device add -n $vmid /dev/net/tun");
+    #system("lxc-device add -n $vmid /dev/ppp");
+    #system("lxc-device add -n $vmid /dev/net/tun");
 } elsif ($phase eq 'pre-stop') {
 } elsif ($phase eq 'post-stop') {
 	#Cleanup
-	system("rm /dev_lxc/ppp");
+    #system("rm /dev_lxc/ppp");
 } else {
 	die "got unknown phase '$phase'\n";
 }
