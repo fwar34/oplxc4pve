@@ -44,6 +44,10 @@ container_init() {
                 local modulesdir=$(basename $(dirname $(opkg files kmod-ipt-core|grep "/lib/modules/[0-9].*"|head -1)))
                 ln -s $modulesdir /lib/modules/$(uname -r)
         fi
+
+        #mknod /dev/ppp c 108 0
+        #mkdir -p /dev/net
+        #mknod /dev/net/tun c 10 200
         exit $res
 }
 
