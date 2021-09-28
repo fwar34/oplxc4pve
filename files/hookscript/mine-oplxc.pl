@@ -124,6 +124,12 @@ if ($phase eq 'pre-start') {
 	# system("chown 100000:100000 /run/ctshare");
 	#Caution: making ctshare rw by everyone has security implications. Only uncomment the line below if it fits your case. 
 	#system("chmod 777 /run/ctshare");
+	
+	system("modprobe cls_fw")
+	system("modprobe cls_flow")
+	system("modprobe sch_htb")
+	system("modprobe sch_hfsc")
+	system("modprobe act_ipt")
 } elsif ($phase eq 'post-start') {
 	system("lxc-device add -n $vmid /dev/ppp");
 	system("lxc-device add -n $vmid /dev/net/tun");
