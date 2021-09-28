@@ -131,12 +131,12 @@ if ($phase eq 'pre-start') {
 	system("modprobe sch_hfsc")
 	system("modprobe act_ipt")
 } elsif ($phase eq 'post-start') {
-	system("lxc-device add -n $vmid /dev/ppp");
-	system("lxc-device add -n $vmid /dev/net/tun");
+    #system("lxc-device add -n $vmid /dev/ppp");
+    #system("lxc-device add -n $vmid /dev/net/tun");
 } elsif ($phase eq 'pre-stop') {
 } elsif ($phase eq 'post-stop') {
 	#Cleanup
-	system("rm /dev_lxc/ppp");
+    #system("rm /dev_lxc/ppp");
 } else {
 	die "got unknown phase '$phase'\n";
 }
