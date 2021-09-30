@@ -8,7 +8,7 @@ my $phase = shift;
 if ($phase eq 'pre-start') {
 	#You can also load kernel modules via host /etc/modules. More or less kmods are needed depending on different use cases. Hook script is prefered this time. 
 	system("modprobe tun");
-    	#system("modprobe xt_FULLCONENAT");
+    #system("modprobe xt_FULLCONENAT");
 	system("modprobe xt_multiport");
 	system("modprobe xt_connmark");
 	system("modprobe xt_comment");
@@ -91,7 +91,7 @@ if ($phase eq 'pre-start') {
 	system("modprobe nf_nat_amanda");
 	system("modprobe nf_nat_irc");
 	system("modprobe nf_nat_snmp_basic");
-    	#system("modprobe nf_tables_set");
+    #system("modprobe nf_tables_set");
 	system("modprobe sch_fq_codel");
 	system("modprobe sch_tbf");
 	system("modprobe cls_basic");
@@ -125,18 +125,18 @@ if ($phase eq 'pre-start') {
 	#system("chmod 777 /run/ctshare");
 	
 	# 我后来添加的
-	system("modprobe cls_fw")
-	system("modprobe cls_flow")
-	system("modprobe sch_htb")
-	system("modprobe sch_hfsc")
-	system("modprobe act_ipt")
+	system("modprobe cls_fw");
+	system("modprobe cls_flow");
+	system("modprobe sch_htb");
+	system("modprobe sch_hfsc");
+	system("modprobe act_ipt");
 } elsif ($phase eq 'post-start') {
     	#system("lxc-device add -n $vmid /dev/ppp");
     	#system("lxc-device add -n $vmid /dev/net/tun");
 } elsif ($phase eq 'pre-stop') {
 } elsif ($phase eq 'post-stop') {
 	#Cleanup
-    	#system("rm /dev_lxc/ppp");
+    #system("rm /dev_lxc/ppp");
 } else {
 	die "got unknown phase '$phase'\n";
 }
